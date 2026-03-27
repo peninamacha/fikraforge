@@ -1,16 +1,9 @@
-providers = ["node"]
-
 [phases.setup]
 nixPkgs = ["nodejs"]
 
 [phases.install]
-# This ensures your project dependencies AND serve are installed
-cmds = ["npm install", "npm install -g serve"]
-
-[phases.build]
-# Only include this if you have a build script in package.json
-cmds = ["npm run build"]
+# We only install serve; we don't run a general 'npm install'
+cmds = ["npm install -g serve"]
 
 [start]
-# Replace 'dist' with 'build' or 'public' depending on your framework
-cmd = "serve -s dist -l $PORT"
+cmd = "serve -s . -l $PORT"
