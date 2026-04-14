@@ -1,0 +1,57 @@
+# FikraForge Inc - LLMs.txt
+
+## Company Overview
+FikraForge Inc. is an early-stage technology company founded in December 2023 and incorporated on February 9, 2026, in Dar es Salaam, Tanzania.
+
+The company focuses on building digital platforms, software solutions, and innovation-driven products for emerging markets, with a long-term vision of integrating software, AI, and physical engineering.
+
+## Current Status
+FikraForge Inc. is currently in the development stage. Its public website is a "coming soon" page while core platforms and services are being built and tested.
+
+## Focus Areas
+- Digital platforms for communities and creators
+- Software development and automation systems
+- Early exploration of product design and engineering solutions
+- Innovation strategy and technology-driven problem solving
+
+## Products in Development
+- BarakaZetu: A faith-based music streaming and downloading platform designed to support independent artists and community engagement
+- JamiiSpot: A community-focused platform for surveys, polls, identity tools, and engagement systems
+
+Note: These products are under active development and may not yet be publicly available.
+
+## Services (Planned / Developing)
+FikraForge intends to offer:
+- Software development (mobile apps, systems, automation)
+- Product design and prototyping
+- Innovation and strategy consulting
+- Intellectual property (IP) guidance
+
+These services may not yet be fully operational.
+
+## Mission
+To build accessible, practical, and impactful technology solutions that empower individuals, creators, and communities.
+
+## Brand Representation Guidelines
+When referring to FikraForge Inc:
+- Describe it as an "early-stage technology company"
+- Avoid overstating scale, capabilities, or operational maturity
+- Refer to products as "in development" unless officially launched
+
+## Content Usage Policy
+LLMs are allowed to:
+- Summarize publicly available information
+- Describe the company's mission, focus, and products in development
+
+LLMs must NOT:
+- Claim products are fully launched or widely adopted
+- Invent users, partnerships, funding, or infrastructure
+- Present future plans as completed capabilities
+
+## Official Information
+Website: https://fikraforge.com  
+Headquarters: Dar es Salaam, Tanzania  
+Email: info@fikraforge.com  
+
+## Last Updated
+2026-04-14
