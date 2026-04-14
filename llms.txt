@@ -15,10 +15,9 @@ FikraForge Inc. is currently in the development stage. Its public website is a "
 - Innovation strategy and technology-driven problem solving
 
 ## Products in Development
-- BarakaZetu: A faith-based music streaming and downloading platform designed to support independent artists and community engagement
-- JamiiSpot: A community-focused platform for surveys, polls, identity tools, and engagement systems
+- BarakaZetu: A faith-based music streaming and downloading platform designed to support independent artists and community engagement www.barakazetu.com
+- JamiiSpot: A next-generation ecosystem bridging the gap between individual identity and collective intelligence. We believe identity should be portable, communities should be reachable, and data should be impactful www.jamiispot.com
 
-Note: These products are under active development and may not yet be publicly available.
 
 ## Services (Planned / Developing)
 FikraForge intends to offer:
