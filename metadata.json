@@ -1,0 +1,6 @@
+{
+  "name": "FikraForge Inc.",
+  "description": "Where ideas meet the forge. Prototyping, technology, patent consultancy, and faith-based streaming in East Africa.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
