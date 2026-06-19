@@ -29,6 +29,7 @@ import {
   Undo
 } from 'lucide-react';
 import { getCMSData, saveCMSData, DEFAULT_CMS, CMSData } from '../lib/cms';
+import FikraIcon from './FikraIcon';
 import { 
   getProducts, saveProducts, DbProduct,
   getFeedbacks, saveFeedbacks, DbTestimonial,
@@ -617,6 +618,15 @@ Forge Center · Dar es Salaam`;
               <span>Demo Quick Bypass</span>
             </button>
           </form>
+
+          <div className="mt-6 text-center border-t border-white/5 pt-4">
+            <a 
+              href="/" 
+              className="font-mono text-[9px] uppercase tracking-wider text-white/40 hover:text-white transition-colors"
+            >
+              ← Back to main site
+            </a>
+          </div>
         </div>
       </div>
     );
@@ -654,6 +664,13 @@ Forge Center · Dar es Salaam`;
         </div>
 
         <div className="flex items-center gap-3 self-end md:self-auto">
+          <a
+            href="/"
+            className="font-sans font-semibold text-xs px-3.5 py-2 rounded-xl bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/10 transition-colors"
+          >
+            Back to Website
+          </a>
+
           <button
             onClick={loadDatabase}
             className="p-2 rounded-lg bg-white/5 border border-white/10 text-white/70 hover:text-white transition-colors cursor-pointer"
@@ -1311,7 +1328,9 @@ Forge Center · Dar es Salaam`;
                       }`}
                     >
                       <div className="flex items-center gap-2.5 min-w-0">
-                        <span className="text-xl select-none bg-white/5 w-8 h-8 rounded-lg flex items-center justify-center border border-white/5">{prod.icon}</span>
+                        <span className="text-xl select-none bg-white/5 w-8 h-8 rounded-lg flex items-center justify-center border border-white/5">
+                          <FikraIcon icon={prod.icon} className="w-5 h-5 text-[#E0531E]" />
+                        </span>
                         <div className="min-w-0">
                           <h5 className="font-sans font-black text-xs text-white leading-none mb-1 truncate">{prod.name}</h5>
                           <p className="text-[9px] font-mono text-white/45 uppercase leading-none truncate">{prod.category}</p>
@@ -1685,7 +1704,9 @@ Forge Center · Dar es Salaam`;
                     }`}
                   >
                     <div className="flex items-center gap-3 min-w-0">
-                      <span className="text-xl bg-white/5 w-8 h-8 rounded-lg flex items-center justify-center border border-white/5">{cap.icon}</span>
+                      <span className="text-xl bg-white/5 w-8 h-8 rounded-lg flex items-center justify-center border border-white/5">
+                        <FikraIcon icon={cap.icon} className="w-5 h-5 text-[#E0531E]" />
+                      </span>
                       <div className="min-w-0">
                         <h5 className="font-sans font-black text-xs text-white leading-none mb-1 truncate">{cap.name}</h5>
                         <p className="text-[9px] font-sans text-white/45 leading-none truncate">{cap.detail}</p>

@@ -4,6 +4,7 @@
  */
 
 import { Menu, X, Landmark, Lock } from 'lucide-react';
+import Link from 'next/link';
 
 interface NavbarProps {
   currentSection: number;
@@ -92,18 +93,14 @@ export default function Navbar({
           <div className="w-px h-5 bg-white/10 mx-1.5" />
 
           {/* Admin Vault Quick Enter button */}
-          <button
-            onClick={() => onNavigate(6)}
-            className={`font-mono text-[10px] uppercase font-bold tracking-wider px-3.5 py-2 rounded-full cursor-pointer flex items-center gap-1.5 transition-all select-none ${
-              currentSection === 6
-                ? 'bg-amber-500/10 border border-amber-500/40 text-amber-400'
-                : 'bg-transparent border border-white/10 text-white/50 hover:text-white hover:border-white/20'
-            }`}
+          <Link
+            href="/ouradmin"
+            className="font-mono text-[10px] uppercase font-bold tracking-wider px-3.5 py-2 rounded-full cursor-pointer flex items-center gap-1.5 transition-all select-none bg-transparent border border-white/10 text-white/50 hover:text-white hover:border-white/20"
             title="Authenticate Admin Vault Control Room"
           >
-            <Lock className={`w-3 h-3 ${currentSection === 6 ? 'stroke-amber-400' : 'stroke-white/50'}`} />
+            <Lock className="w-3 h-3 stroke-white/50" />
             <span>Admin</span>
-          </button>
+          </Link>
         </div>
 
         {/* Mobile menu trigger */}
@@ -143,18 +140,14 @@ export default function Navbar({
         ))}
 
         {/* Mobile Admin gate link */}
-        <button
-          onClick={() => {
-            onNavigate(6);
-            onCloseMenu();
-          }}
-          className={`font-mono text-left text-xs uppercase tracking-wide py-3 bg-transparent border-0 cursor-pointer transition-colors select-none flex items-center gap-2 ${
-            currentSection === 6 ? 'text-amber-400 font-bold pl-1' : 'text-white/45 hover:text-white'
-          }`}
+        <Link
+          href="/ouradmin"
+          onClick={onCloseMenu}
+          className="font-mono text-left text-xs uppercase tracking-wide py-3 bg-transparent border-0 cursor-pointer transition-colors select-none flex items-center gap-2 text-white/45 hover:text-white"
         >
           <Lock className="w-3.5 h-3.5 shrink-0" />
           <span>Admin Controls</span>
-        </button>
+        </Link>
       </div>
     </>
   );

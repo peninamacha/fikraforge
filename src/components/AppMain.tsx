@@ -15,7 +15,6 @@ import SocialProofSection from './SocialProofSection';
 import AboutSection from './AboutSection';
 import ContactSection from './ContactSection';
 import ServicesSection from './ServicesSection';
-import AdminSection from './AdminSection';
 import CompetitionOverlay from './CompetitionOverlay';
 import NewsOverlay from './NewsOverlay';
 import PortfolioOverlay from './PortfolioOverlay';
@@ -73,8 +72,7 @@ export default function AppMain() {
     { id: 'services', label: 'Services' },
     { id: 'about', label: 'About' },
     { id: 'contact', label: 'Contact' },
-    { id: 'studio', label: 'Design Studio' },
-    { id: 'admin', label: 'Admin Panel' }
+    { id: 'studio', label: 'Design Studio' }
   ];
 
   return (
@@ -202,7 +200,6 @@ export default function AppMain() {
                   onEnquireClick={() => handlePageNavigate(4)}
                 />
               )}
-              {currentSection === 6 && <AdminSection />}
             </motion.div>
           </AnimatePresence>
         </main>

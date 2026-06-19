@@ -19,8 +19,8 @@ import {
 import { motion, AnimatePresence } from 'motion/react';
 import { getProducts, getFeedbacks, getNews, DbProduct, DbTestimonial, DbNewsArticle } from '../lib/db';
 import { ProductPlatform } from '../types';
+import FikraIcon from './FikraIcon';
 import { getCMSData, CMSData } from '../lib/cms';
-
 
 interface HeroSectionProps {
   onLearnMore: () => void;
@@ -271,8 +271,8 @@ export default function HeroSection({
               
               <div>
                 <div className="flex justify-between items-center mb-4">
-                  <span className="w-9 h-9 rounded-xl bg-[#C94A1A]/10 border border-[#C94A1A]/20 flex items-center justify-center text-base">
-                    {item.icon}
+                  <span className="w-9 h-9 rounded-xl bg-[#C94A1A]/10 border border-[#C94A1A]/20 flex items-center justify-center">
+                    <FikraIcon icon={item.icon} className="w-5 h-5 text-[#E0531E]" />
                   </span>
                   
                   {/* Status Indicator */}

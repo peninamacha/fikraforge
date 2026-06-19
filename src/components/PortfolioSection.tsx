@@ -8,6 +8,8 @@ import { ExternalLink, Layers, Smartphone, Settings2, Sparkles } from 'lucide-re
 import { getProducts, DbProduct } from '../lib/db';
 import { ProductPlatform } from '../types';
 
+import FikraIcon from './FikraIcon';
+
 interface PortfolioSectionProps {
   onProductClick: (product: ProductPlatform) => void;
 }
@@ -107,7 +109,9 @@ export default function PortfolioSection({ onProductClick }: PortfolioSectionPro
                   referrerPolicy="no-referrer"
                 />
               ) : (
-                <div className="text-5xl select-none text-white/15 group-hover:scale-110 transition-transform duration-500">{p.icon}</div>
+                <div className="text-5xl select-none text-white/15 group-hover:scale-110 transition-transform duration-500">
+                  <FikraIcon icon={p.icon} className="w-12 h-12 text-white/20" />
+                </div>
               )}
               {/* Overlay Badge */}
               <div className="absolute top-3 right-3 bg-black/75 backdrop-blur-md rounded-full px-3 py-1 text-[9px] font-mono tracking-wider font-semibold text-[#F5F5F7]">

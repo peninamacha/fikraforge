@@ -6,6 +6,7 @@
 import { motion } from 'motion/react';
 import { X, ExternalLink, ShieldCheck, Cpu, Code2 } from 'lucide-react';
 import { ProductPlatform } from '../types';
+import FikraIcon from './FikraIcon';
 
 interface PortfolioOverlayProps {
   product: ProductPlatform | null;
@@ -48,7 +49,9 @@ export default function PortfolioOverlay({ product, onClose }: PortfolioOverlayP
               referrerPolicy="no-referrer"
             />
           ) : (
-            <div className="text-6xl text-white/20 select-none">{product.icon}</div>
+            <div className="text-6xl text-white/20 select-none">
+              <FikraIcon icon={product.icon} className="w-16 h-16 text-white/20" />
+            </div>
           )}
           {/* Subtle gradient dark overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#111113] to-transparent pointer-events-none" />
