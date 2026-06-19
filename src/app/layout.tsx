@@ -19,6 +19,11 @@ export const metadata: Metadata = {
   description: "FikraForge is a premier industrial prototyping, software development, and intellectual property consulting lab cell based in East Africa.",
   keywords: ["FikraForge", "industrial prototyping", "CNC design", "software development Tanzania", "patent consulting", "BRELA license", "CAD blueprints", "hardware drafting", "IoT electronics", "smart contracts"],
   authors: [{ name: "FikraForge Inc." }],
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   robots: {
     index: true,
     follow: true,
