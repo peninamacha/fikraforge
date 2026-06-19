@@ -222,10 +222,10 @@ export default function ContactSection() {
   };
 
   const contactBlocks = [
-    { label: 'Email Enquiries', val: 'info@fikraforge.com', action: 'mailto:info@fikraforge.com', icon: <Mail className="w-4 h-4 text-[#C94A1A]" /> },
-    { label: 'Corporate HQ', val: 'Dar es Salaam, Tanzania', icon: <Landmark className="w-4 h-4 text-[#C94A1A]" /> },
+    { label: 'Email Enquiries', val: cms.contact_email || 'info@fikraforge.com', action: `mailto:${cms.contact_email || 'info@fikraforge.com'}`, icon: <Mail className="w-4 h-4 text-[#C94A1A]" /> },
+    { label: 'Corporate HQ', val: cms.contact_address || 'Dar es Salaam, Tanzania', icon: <Landmark className="w-4 h-4 text-[#C94A1A]" /> },
     { label: 'Online Platform', val: 'fikraforge.com', action: 'https://fikraforge.com', icon: <Globe className="w-4 h-4 text-[#C94A1A]" /> },
-    { label: 'Legal Incorporation', val: 'BRELA Registar · Dar es Salaam', icon: <Globe className="w-4 h-4 text-[#C94A1A]" /> }
+    { label: 'Legal Incorporation', val: cms.legal_registration || 'BRELA Registrar · Dar es Salaam', icon: <Globe className="w-4 h-4 text-[#C94A1A]" /> }
   ];
 
   return (

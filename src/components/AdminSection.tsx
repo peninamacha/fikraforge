@@ -189,10 +189,10 @@ export default function AdminSection() {
   // Passcode login validation
   const handleAuthSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const cleanAuth = passcode.trim().toLowerCase();
+    const cleanAuth = passcode.trim();
     
-    // Pro keys: 'admin' or 'forge'
-    if (cleanAuth === 'admin' || cleanAuth === 'forge' || cleanAuth === 'forge2026') {
+    // Pro key: '@Tanzania255'
+    if (cleanAuth === '@Tanzania255') {
       setIsAuthenticated(true);
       setPasscodeError('');
       sessionStorage.setItem('fikra_admin_auth', 'true');
@@ -200,13 +200,6 @@ export default function AdminSection() {
     } else {
       setPasscodeError('Invalid credentials. Clearance level insufficient.');
     }
-  };
-
-  // Demo direct pass bypass for ease of use in preview
-  const handleDemoBypass = () => {
-    setIsAuthenticated(true);
-    sessionStorage.setItem('fikra_admin_auth', 'true');
-    triggerToast('Authorized via Demo Override Bypass.');
   };
 
   const handleLogout = () => {
@@ -548,14 +541,15 @@ Forge Center · Dar es Salaam`;
           <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-[#C94A1A] via-amber-500 to-[#F57C00]" />
           
           <div className="flex flex-col items-center text-center gap-4 mb-8">
-            <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-orange-500 relative">
-              <Lock className="w-5 h-5 text-[#C94A1A]" />
-              <div className="absolute inset-0 bg-orange-500/10 blur-xl rounded-full" />
-            </div>
+            <img 
+              src="/logo.png" 
+              alt="FikraForge Logo" 
+              className="h-10 w-auto object-contain mb-2 select-none"
+            />
             
             <div>
-              <h2 className="font-sans font-bold text-lg text-white tracking-wide">AUTHENTICATE SYSTEM</h2>
-              <p className="font-mono text-[9px] text-white/40 uppercase tracking-[2px] mt-1">FIKRAFORGE CREDENTIAL GATEWAY</p>
+              <h2 className="font-sans font-bold text-sm text-white tracking-widest uppercase font-mono mt-2">AUTHENTICATE SYSTEM</h2>
+              <p className="font-mono text-[8px] text-white/40 uppercase tracking-[2px] mt-1">FIKRAFORGE SECURE ARCHITECT PORTAL</p>
             </div>
           </div>
 
@@ -583,9 +577,6 @@ Forge Center · Dar es Salaam`;
                   {showPasscode ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                 </button>
               </div>
-              <p className="text-[10px] text-white/40 font-sans mt-1 text-center">
-                * Default bypass passcode is <code className="font-mono bg-white/5 text-amber-500 px-1 py-0.5 rounded text-[9px]">admin</code> or <code className="font-mono bg-white/5 text-amber-500 px-1 py-0.5 rounded text-[9px]">forge</code>
-              </p>
             </div>
 
             {passcodeError && (
@@ -600,22 +591,6 @@ Forge Center · Dar es Salaam`;
               className="mt-2 bg-[#C94A1A] hover:bg-[#E0531E] text-white font-sans font-semibold text-xs py-3 rounded-xl transition-all w-full select-none cursor-pointer border-0 active:scale-95 shadow shadow-[#C94A1A]/20"
             >
               Unlock Vault Console
-            </button>
-
-            <div className="relative my-2 flex items-center justify-center">
-              <div className="absolute inset-x-0 h-px bg-white/5" />
-              <span className="text-[8px] font-mono text-white/30 uppercase bg-[#0c0c0e] px-2.5 relative z-10 tracking-widest">
-                PREVIEW BYPASS OVERRIDE
-              </span>
-            </div>
-
-            <button
-              type="button"
-              onClick={handleDemoBypass}
-              className="bg-white/5 hover:bg-white/10 text-white/80 border border-white/10 font-sans text-xs py-2.5 rounded-xl transition-all w-full select-none cursor-pointer flex items-center justify-center gap-2"
-            >
-              <Unlock className="w-3.5 h-3.5 text-amber-500" />
-              <span>Demo Quick Bypass</span>
             </button>
           </form>
 
@@ -646,7 +621,13 @@ Forge Center · Dar es Salaam`;
       {/* Admin Panel Header Block */}
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between border-b border-white/5 pb-5 mb-6 gap-4">
         <div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-wrap">
+            <img 
+              src="/logo.png" 
+              alt="FikraForge Logo" 
+              className="h-6 w-auto object-contain opacity-90 select-none"
+            />
+            <span className="text-white/20 font-mono text-xs">|</span>
             <span className="inline-flex items-center bg-amber-500/10 border border-amber-500/20 text-amber-400 font-mono font-extrabold tracking-widest text-[8px] px-1.5 py-0.5 rounded uppercase">
               Clearance Level 1
             </span>
@@ -655,7 +636,7 @@ Forge Center · Dar es Salaam`;
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse" /> Live Connected
             </span>
           </div>
-          <h1 className="font-sans font-black text-2xl text-white tracking-tight mt-1 uppercase">
+          <h1 className="font-sans font-black text-xl text-white tracking-tight mt-2.5 uppercase">
             Architect control room
           </h1>
           <p className="font-mono text-[10px] text-white/40 tracking-wider uppercase mt-0.5">
@@ -2312,12 +2293,112 @@ Forge Center · Dar es Salaam`;
                   </div>
                 </div>
 
+                {/* 5. SITE SETTINGS & SOCIAL LINKS ACCORDION GROUP */}
+                <div className="border border-white/5 bg-black/30 rounded-2xl p-4.5">
+                  <h4 className="font-sans font-bold text-xs text-[#C94A1A] uppercase tracking-wider mb-4 border-b border-white/5 pb-2">
+                    5. Site Settings & Social Coordinates
+                  </h4>
+                  <div className="flex flex-col gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-[10px] font-mono text-white/40 uppercase tracking-wide">Contact Email Address:</label>
+                        <input
+                          type="email"
+                          value={cmsValues.contact_email || ''}
+                          onChange={(e) => setCmsValues(prev => ({ ...prev, contact_email: e.target.value }))}
+                          className="bg-black/50 border border-white/10 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-[#C94A1A] transition-colors"
+                          placeholder="e.g. info@fikraforge.com"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-[10px] font-mono text-white/40 uppercase tracking-wide">Contact Phone Number:</label>
+                        <input
+                          type="text"
+                          value={cmsValues.contact_phone || ''}
+                          onChange={(e) => setCmsValues(prev => ({ ...prev, contact_phone: e.target.value }))}
+                          className="bg-black/50 border border-white/10 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-[#C94A1A] transition-colors"
+                          placeholder="e.g. +255 700 000 000"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-[10px] font-mono text-white/40 uppercase tracking-wide">HQ Physical Location Address:</label>
+                        <input
+                          type="text"
+                          value={cmsValues.contact_address || ''}
+                          onChange={(e) => setCmsValues(prev => ({ ...prev, contact_address: e.target.value }))}
+                          className="bg-black/50 border border-white/10 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-[#C94A1A] transition-colors"
+                          placeholder="e.g. Dar es Salaam, Tanzania"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-[10px] font-mono text-white/40 uppercase tracking-wide">BRELA / Legal Registration Text:</label>
+                        <input
+                          type="text"
+                          value={cmsValues.legal_registration || ''}
+                          onChange={(e) => setCmsValues(prev => ({ ...prev, legal_registration: e.target.value }))}
+                          className="bg-black/50 border border-white/10 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-[#C94A1A] transition-colors"
+                          placeholder="e.g. BRELA Registrar · Dar es Salaam"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-white/5">
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-[10px] font-mono text-white/40 uppercase tracking-wide">GitHub Repository Link:</label>
+                        <input
+                          type="text"
+                          value={cmsValues.social_github || ''}
+                          onChange={(e) => setCmsValues(prev => ({ ...prev, social_github: e.target.value }))}
+                          className="bg-black/50 border border-white/10 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-[#C94A1A] transition-colors"
+                          placeholder="e.g. https://github.com/FIKRAFORGE"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-[10px] font-mono text-white/40 uppercase tracking-wide">Twitter / X Link:</label>
+                        <input
+                          type="text"
+                          value={cmsValues.social_twitter || ''}
+                          onChange={(e) => setCmsValues(prev => ({ ...prev, social_twitter: e.target.value }))}
+                          className="bg-black/50 border border-white/10 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-[#C94A1A] transition-colors"
+                          placeholder="e.g. https://twitter.com/FIKRAFORGE"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-[10px] font-mono text-white/40 uppercase tracking-wide">LinkedIn Company Page Link:</label>
+                        <input
+                          type="text"
+                          value={cmsValues.social_linkedin || ''}
+                          onChange={(e) => setCmsValues(prev => ({ ...prev, social_linkedin: e.target.value }))}
+                          className="bg-black/50 border border-white/10 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-[#C94A1A] transition-colors"
+                          placeholder="e.g. https://linkedin.com/company/fikraforge"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-[10px] font-mono text-white/40 uppercase tracking-wide">Instagram Profile Link:</label>
+                        <input
+                          type="text"
+                          value={cmsValues.social_instagram || ''}
+                          onChange={(e) => setCmsValues(prev => ({ ...prev, social_instagram: e.target.value }))}
+                          className="bg-black/50 border border-white/10 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-[#C94A1A] transition-colors"
+                          placeholder="e.g. https://instagram.com/fikraforge"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Action save trigger */}
                 <button
                   onClick={() => {
                     const saved = saveCMSData(cmsValues);
                     setCmsValues(saved);
-                    triggerToast("New CMS front-facing page copy saved and compiled successfully!");
+                    triggerToast("New CMS configurations saved and compiled successfully!");
                   }}
                   type="button"
                   className="w-full bg-[#C94A1A] hover:bg-[#E0531E] text-white font-sans font-black text-xs uppercase py-4 rounded-xl cursor-pointer select-none transition-all active:scale-95 border-0 shadow-lg shadow-[#C94A1A]/25 flex items-center justify-center gap-2"

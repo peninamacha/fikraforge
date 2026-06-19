@@ -24,6 +24,16 @@ export interface CMSData {
   contact_title: string;
   contact_description: string;
   contact_working_hours: string;
+
+  contact_email: string;
+  contact_phone: string;
+  contact_address: string;
+  legal_registration: string;
+  
+  social_github: string;
+  social_twitter: string;
+  social_linkedin: string;
+  social_instagram: string;
 }
 
 export const DEFAULT_CMS: CMSData = {
@@ -47,6 +57,16 @@ export const DEFAULT_CMS: CMSData = {
   contact_title: "Let's build something real.",
   contact_description: "Whether you have a custom mobile app to compile, physical CAD mechanisms to prototype, or patent applications to file, our team is ready to forge your vision.",
   contact_working_hours: "Our coordinates: Monday - Saturday, 08:30 AM - 06:00 PM (EAT). Physical Forge appointments scheduled via initial brief confirmation.",
+
+  contact_email: "info@fikraforge.com",
+  contact_phone: "+255 700 000 000",
+  contact_address: "Dar es Salaam, Tanzania",
+  legal_registration: "BRELA Registrar · Dar es Salaam",
+  
+  social_github: "https://github.com/FIKRAFORGE",
+  social_twitter: "https://twitter.com/FIKRAFORGE",
+  social_linkedin: "https://linkedin.com/company/fikraforge",
+  social_instagram: "https://instagram.com/fikraforge",
 };
 
 export function getCMSData(): CMSData {

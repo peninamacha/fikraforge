@@ -23,6 +23,7 @@ import { ProductPlatform } from '../types';
 export default function AppMain() {
   // Preloader State
   const [loading, setLoading] = useState<boolean>(true);
+  const [progress, setProgress] = useState<number>(0);
 
   // Active Screen Section (0 to 5)
   const [currentSection, setCurrentSection] = useState<number>(0);
@@ -33,12 +34,29 @@ export default function AppMain() {
   const [isNewsOpen, setIsNewsOpen] = useState<boolean>(false);
   const [selectedProduct, setSelectedProduct] = useState<ProductPlatform | null>(null);
 
-  // Loader automatic timer
+  // Loader automatic progress animation
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-    return () => clearTimeout(timer);
+    const startTime = Date.now();
+    const duration = 1500; // 1.5 seconds
+
+    let frameId: number;
+
+    const updateProgress = () => {
+      const elapsed = Date.now() - startTime;
+      const progressPercent = Math.min(100, Math.floor((elapsed / duration) * 100));
+      setProgress(progressPercent);
+
+      if (elapsed < duration) {
+        frameId = requestAnimationFrame(updateProgress);
+      } else {
+        setTimeout(() => {
+          setLoading(false);
+        }, 300);
+      }
+    };
+
+    frameId = requestAnimationFrame(updateProgress);
+    return () => cancelAnimationFrame(frameId);
   }, []);
 
   // Keyboard and ESC handlers to dismiss overlays
@@ -84,54 +102,34 @@ export default function AppMain() {
             key="preloader"
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.5, ease: 'easeInOut' }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="fixed inset-0 bg-[#050505] z-[9999] flex flex-col items-center justify-center gap-6"
           >
-            {/* Pulsing Ember logo mark with brand orange colors */}
+            {/* Cinematic logo fade-in and scale-up */}
             <div className="flex flex-col items-center gap-4">
-              <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center animate-[pulse_1.5s_infinite_alternate] shadow-lg shadow-[#C94A1A]/10">
-                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="loader-logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#C94A1A" />
-                      <stop offset="100%" stopColor="#F57C00" />
-                    </linearGradient>
-                  </defs>
-                  <path 
-                    d="M12 2L4 6.5V15.5L12 20L20 15.5V6.5L12 2Z" 
-                    stroke="url(#loader-logo-grad)" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round"
-                    className="opacity-40"
-                  />
-                  <path 
-                    d="M10 16V8.5H15M10 11.5H13.5M10 16C10 16 11.2 16 12 15.5C12.8 15 13.2 14.1 13.2 13.2C13.2 10.5 10.5 9.7 12.2 7" 
-                    stroke="url(#loader-logo-grad)" 
-                    strokeWidth="2.2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <span className="font-sans font-semibold text-lg md:text-xl text-[#F5F5F7] tracking-widest uppercase">
-                FikraForge
-              </span>
-            </div>
-
-            {/* Seamless fill line */}
-            <div className="w-48 h-[1px] bg-white/10 rounded overflow-hidden">
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: '100%' }}
-                transition={{ duration: 1.6, ease: 'easeInOut', delay: 0.2 }}
-                className="h-full bg-gradient-to-r from-[#C94A1A] to-[#F57C00]"
+              <motion.img
+                src="/logo.png"
+                alt="FikraForge Logo"
+                initial={{ opacity: 0, scale: 0.95, filter: "blur(8px)" }}
+                animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+                className="h-16 w-auto object-contain mb-2"
               />
             </div>
 
-            <span className="text-[10px] uppercase font-mono tracking-[3.5px] text-white/40 block">
-              Where ideas meet the forge
-            </span>
+            {/* Seamless fill progress line */}
+            <div className="w-56 h-[2px] bg-white/5 rounded-full overflow-hidden relative border border-white/5">
+              <div 
+                className="h-full bg-gradient-to-r from-[#C94A1A] via-amber-500 to-[#F57C00] transition-all duration-75"
+                style={{ width: `${progress}%` }}
+              />
+            </div>
+
+            {/* loading coordinates and percentage ticker */}
+            <div className="flex justify-between w-56 font-mono text-[9px] text-white/35 uppercase tracking-[2.5px] mt-1 select-none">
+              <span>SYSTEM BOOT</span>
+              <span className="text-[#C94A1A] font-extrabold">{progress.toString().padStart(3, '0')}%</span>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -160,10 +158,10 @@ export default function AppMain() {
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSection}
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -15 }}
-              transition={{ duration: 0.35, ease: 'easeOut' }}
+              initial={{ opacity: 0, y: 12, scale: 0.99 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -12, scale: 0.99 }}
+              transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
               className="w-full"
             >
               {currentSection === 0 && (
@@ -209,8 +207,15 @@ export default function AppMain() {
           className="w-full border-t border-white/5 bg-[#050505]/95 backdrop-blur-md py-8 flex flex-col sm:flex-row items-center justify-between px-6 md:px-12 z-[100] gap-4"
           role="contentinfo"
         >
-          <div className="font-sans text-[10px] md:text-xs text-white/35">
-            &copy; 2026 FikraForge Inc. · Dar es Salaam, TZ
+          <div className="flex flex-col gap-2">
+            <img 
+              src="/logo.png" 
+              alt="FikraForge Logo" 
+              className="h-8 w-auto object-contain self-start opacity-60 hover:opacity-100 transition-opacity"
+            />
+            <div className="font-sans text-[10px] md:text-xs text-white/35">
+              &copy; 2026 FikraForge Inc. · Dar es Salaam, TZ
+            </div>
           </div>
 
           <div className="flex gap-4 font-sans text-[10px] md:text-xs text-white/35">

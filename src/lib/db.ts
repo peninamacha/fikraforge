@@ -104,7 +104,22 @@ export function getProducts(): DbProduct[] {
   const stored = localStorage.getItem('fikra_portfolio_items');
   if (stored) {
     try {
-      return JSON.parse(stored);
+      let items = JSON.parse(stored) as DbProduct[];
+      let changed = false;
+      items = items.map(item => {
+        const matchingFresh = PRODUCTS.find(p => p.id === item.id);
+        if (matchingFresh) {
+          if (!item.image || item.image.includes('placehold.co') || item.image.includes('placeholder')) {
+            item.image = matchingFresh.image;
+            changed = true;
+          }
+        }
+        return item;
+      });
+      if (changed) {
+        localStorage.setItem('fikra_portfolio_items', JSON.stringify(items));
+      }
+      return items;
     } catch (e) {
       return PRODUCTS.map(p => ({ ...p, approved: true }));
     }

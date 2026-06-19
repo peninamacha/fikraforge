@@ -16,7 +16,7 @@ export const PRODUCTS: ProductPlatform[] = [
     url: 'https://barakazetu.com',
     status: 'live',
     tags: ['Mobile App', 'Flutter', 'Streaming', 'Firebase Backend'],
-    image: 'https://placehold.co/600x400/121212/C94A1A?text=BarakaZetu+Active+Play'
+    image: 'https://images.unsplash.com/photo-1614680376593-902f74fa0d41?auto=format&fit=crop&w=600&q=80'
   },
   {
     id: 'jamiispot',
@@ -28,7 +28,7 @@ export const PRODUCTS: ProductPlatform[] = [
     url: 'https://jamiispot.com',
     status: 'live',
     tags: ['NFC Tech', 'Web App', 'Identity', 'Enterprise'],
-    image: 'https://placehold.co/600x400/121212/C94A1A?text=JamiiSpot+NFC+System'
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80'
   },
   {
     id: 'fikramakazi',
@@ -39,7 +39,7 @@ export const PRODUCTS: ProductPlatform[] = [
     icon: '🏠',
     status: 'development',
     tags: ['PropTech', 'SaaS', 'Mobile Money', 'Automation'],
-    image: 'https://placehold.co/600x400/121212/C94A1A?text=FikraMakazi+SaaS'
+    image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=600&q=80'
   },
   {
     id: 'fikrasiri',
@@ -50,7 +50,7 @@ export const PRODUCTS: ProductPlatform[] = [
     icon: '💬',
     status: 'live',
     tags: ['Privacy', 'Communication', 'Dialogue', 'Security'],
-    image: 'https://placehold.co/600x400/121212/C94A1A?text=FikraSiri+Platform'
+    image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80'
   },
   {
     id: 'fikrapesa',
@@ -59,7 +59,8 @@ export const PRODUCTS: ProductPlatform[] = [
     description: 'Dual-engine transactional dashboard built with secure localized ledger networks and custom payment routing mechanisms. Entry point scheduled for late 2026.',
     icon: '💰',
     status: 'concept',
-    tags: ['Fintech', 'Ledger', 'Payment APIs', 'In Progress']
+    tags: ['Fintech', 'Ledger', 'Payment APIs', 'In Progress'],
+    image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=600&q=80'
   },
   {
     id: 'prototyping',
@@ -68,7 +69,8 @@ export const PRODUCTS: ProductPlatform[] = [
     description: 'Engineering workflows turning digital CAD blueprints into structural models using our high-grade 3D printers and custom assembly frameworks.',
     icon: '⚙️',
     status: 'live',
-    tags: ['CAD / CAM', '3D Printing', 'Product Engineering', 'Materials']
+    tags: ['CAD / CAM', '3D Printing', 'Product Engineering', 'Materials'],
+    image: 'https://images.unsplash.com/photo-1618090580576-c94a4c0269f2?auto=format&fit=crop&w=600&q=80'
   }
 ];
 

@@ -31,21 +31,21 @@ interface HeroSectionProps {
 
 const SLIDES = [
   {
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80',
     title: 'Digital Software Casts',
     tagline: 'HIGH PERFORMANCE CODE REPOSITORY',
     description: 'Compiling secure full-stack web architectures, offline fallback databases, responsive mobile app clients, and cloud gateways under precision parameters.',
     cellCode: 'CELL_DIG_01'
   },
   {
-    image: 'https://images.unsplash.com/photo-1537462715879-360eeb61a0bc?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80',
     title: 'Physical Models & CNC Milling',
     tagline: 'SPATIAL STRUCTURE MILLING',
     description: 'Generating precise industrial mechanical blueprints, 3D printing rapid prototypes with high-grade FDM filaments, and structural test frames.',
     cellCode: 'CELL_MEC_02'
   },
   {
-    image: 'https://images.unsplash.com/photo-1517055729445-fa7d27394b48?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1200&q=80',
     title: 'IP & Licensing Consultancy',
     tagline: 'COMPREHENSIVE PATENT DESIGN',
     description: 'Assisting growing startups with comprehensive intellectual property formulation, NDA architectures, and formal BRELA registration frameworks.',
